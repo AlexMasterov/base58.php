@@ -1,0 +1,42 @@
+{
+  "name": "alexmasterov/base58",
+  "description": "A fast and pure Base58 implementation",
+  "type": "library",
+  "license": "MIT",
+  "homepage": "https://github.com/AlexMasterov/base58.php",
+  "authors": [{
+    "name": "Alex Masterov",
+    "email": "alex.masterow@gmail.com"
+  }],
+  "keywords": [
+    "encoding",
+    "binary",
+    "pure",
+    "base58"
+  ],
+  "scripts": {
+    "test": "phpunit"
+  },
+  "autoload": {
+    "files": [
+      "src/functions.php"
+    ],
+    "psr-4": {
+      "Base58\\": "src/"
+    },
+    "exclude-from-classmap": [
+      "/tests/"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Base58\\Test\\": "tests/"
+    }
+  },
+  "require": {
+    "php": "7.2 - 7.3"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.3"
+  }
+}
