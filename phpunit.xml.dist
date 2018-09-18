@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<phpunit bootstrap="vendor/autoload.php"
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
          backupGlobals="false"
          backupStaticAttributes="false"
          colors="true"
@@ -9,8 +11,14 @@
          convertWarningsToExceptions="true"
          processIsolation="false"
          stopOnFailure="false">
+  <php>
+    <ini name="date.timezone" value="UTC" />
+    <ini name="display_errors" value="On" />
+    <ini name="display_startup_errors" value="On" />
+    <ini name="error_reporting" value="E_ALL" />
+  </php>
   <testsuites>
-    <testsuite>
+    <testsuite name="unit">
       <directory>tests</directory>
     </testsuite>
   </testsuites>
@@ -20,7 +28,7 @@
     </whitelist>
   </filter>
   <logging>
-      <log type="coverage-text" target="php://stdout" />
-      <log type="coverage-clover" target="build/logs/clover.xml" />
+    <log type="coverage-text" target="php://stdout" />
+    <log type="coverage-clover" target="build/logs/clover.xml" />
   </logging>
 </phpunit>
